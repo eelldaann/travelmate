@@ -20,7 +20,7 @@ function HeroSection() {
             style={{
                 backgroundImage: `
                     linear-gradient(to top, rgba(0,0,0,0.35), rgba(0,0,0,0.15)),
-                    url('/public/kolsai.jpg')
+                    url('/images/kolsai.jpg')
                 `,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -156,10 +156,10 @@ function DestinationsSection() {
                             <img
                                 src={
                                     idx === 0
-                                        ? "/public/charyn.jpg"
+                                        ? "/images/charyn.jpg"
                                         : idx === 1
-                                            ? "/public/kolsai.jpg"
-                                            : "/public/astana.jpg"
+                                            ? "/images/kolsai.jpg"
+                                            : "/images/astana.jpg"
                                 }
                                 alt={card.title}
                                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
