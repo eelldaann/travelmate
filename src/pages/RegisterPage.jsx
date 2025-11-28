@@ -7,6 +7,7 @@ export default function RegisterPage() {
     const { t } = useLang();
     const { signUp } = useAuth();
 
+    const navigate = useNavigate();
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -24,7 +25,7 @@ export default function RegisterPage() {
         try {
             await signUp({ email, password, firstName, lastName });
             setInfo("Check your email to confirm registration.");
-            setError(err.message || "Failed to sign up");
+            navigate("/confirm")
         } catch (err) {
             setError(err.message || "Failed to sign up");
         } finally {
