@@ -1,10 +1,21 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { translations } from "../i18n.js";
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-    const [lang, setLang] = useState("en");
+    const [lang, setLang] = useState(() => {
+        if (typeof window !== "undefined") {
+            return localStorage.getItem("app_lang") || "en";
+        }
+        return "en";
+    });
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("app_lang", lang);
+        }
+    }, [lang]);
 
     const t = (path) => {
         const keys = path.split(".");

@@ -8,6 +8,12 @@ export const translations = {
             howItWorks: "How it works",
             login: "Log in",
             register: "Sign up",
+            admin: {
+                main: "Admin Panel",
+                tours: "Tours",
+                orders: "Orders",
+            },
+            logout: "Log out"
         },
 
         home: {
@@ -62,33 +68,8 @@ export const translations = {
         tours: {
             badge: "Catalog",
             title: "Tours across Kazakhstan",
-            description:
-                "",
-            cards: {
-                0: {
-                    title: "Almaty – Kolsai & Kaindy",
-                    days: "4 days",
-                    level: "Easy",
-                    price: 620,
-                    desc: "Balanced route with alpine lakes, spruce forests and Charyn canyon.",
-                },
-                1: {
-                    title: "Charyn Canyon & Altyn Emel dunes",
-                    days: "3 days",
-                    level: "Moderate",
-                    price: 540,
-                    desc: "Canyons, singing dunes and steppe landscapes in one compact trip.",
-                },
-                2: {
-                    title: "Mangystau & Bozzhyra cliffs",
-                    days: "5 days",
-                    level: "Intense",
-                    price: 980,
-                    desc: "White cliffs, desert plateaus and surreal formations near the Caspian Sea.",
-                },
-            },
-            previewButton: "Preview itinerary",
-            levelLabel: "Level",
+            description: "",
+            previewButton: "Send request",
         },
 
         howItWorks: {
@@ -126,7 +107,6 @@ export const translations = {
             ],
         },
 
-
         login: {
             badge: "Sign in",
             title: "Log in to TravelMate",
@@ -149,6 +129,12 @@ export const translations = {
             submit: "Sign up",
             hasAccount: "Already have an account?",
             toLogin: "Log in",
+        },
+
+        confirm: {
+            badge: "Sign up",
+            title: "Confirm your registration",
+            description: "Open your email and confirm your registration.",
         },
 
         account: {
@@ -182,6 +168,76 @@ export const translations = {
             privacy: "Privacy",
             company: "TravelMate — Kazakhstan Tours",
         },
+
+
+        admin: {
+            common: {
+                checkingAccess: "Checking access…",
+                accessDeniedTitle: "Access denied",
+                accessDeniedText:
+                    "This page is only available to administrators. Log in with an admin account or contact the site owner.",
+            },
+            tours: {
+                pageTitle: "Tours",
+                loadError: "Failed to load tours",
+                listTitle: "Tours list",
+                newTourButton: "+ New tour",
+                loading: "Loading tours...",
+                empty: "No tours yet.",
+                daysShort: "days",
+                deleteButton: "Delete",
+                deleteConfirm: "Delete this tour?",
+                error: {
+                    uploadImage: "Image upload error",
+                    saveTour: "Failed to save tour",
+                    deleteTour: "Failed to delete tour",
+                    generic: "Error",
+                },
+                form: {
+                    editTitle: "Edit tour",
+                    newTitle: "New tour",
+                    clearForm: "Clear form",
+                    imageLabel: "Image (jpg, png)",
+                    currentImage: "Current file:",
+                    priceLabel: "Price, USD",
+                    daysLabel: "Days",
+                    nameLabel: "Title",
+                    taglineLabel: "Tagline",
+                    shortDescLabel: "Short description",
+                    moodLabel: "Mood tags (comma-separated)",
+                    moodHint: "Use values: relax, adventure, culture",
+                    budgetLabel: "Budget",
+                    submit: {
+                        saving: "Saving...",
+                        edit: "Save changes",
+                        create: "Create tour",
+                    },
+                    cancelEdit: "Cancel editing",
+                    examples: {
+                        titleRu: "Charyn Canyon (RU)",
+                        titleEn: "Charyn Canyon",
+                        titleKz: "Sharyn Canyon (KZ)",
+                        taglineRu: "Adventure • 2 days from Almaty (RU)",
+                        taglineEn: "Adventure • 2 days from Almaty",
+                        taglineKz: "Overview • 2 days from Almaty (KZ)",
+                    },
+                },
+            },
+            orders: {
+                pageTitle: "Tour requests",
+                pageSubtitle: "All tour requests submitted by users.",
+                loadError: "Failed to load requests",
+                loading: "Loading requests…",
+                empty: "No requests yet.",
+                table: {
+                    id: "ID",
+                    date: "Date",
+                    tour: "Tour",
+                    user: "User (user_id)",
+                },
+            },
+        },
+
     },
 
     ru: {
@@ -191,6 +247,12 @@ export const translations = {
             howItWorks: "Как это работает",
             login: "Войти",
             register: "Регистрация",
+            admin: {
+                main: "Админка",
+                tours: "Туры",
+                orders: "Заявки"
+            },
+            logout: "Выход"
         },
 
         home: {
@@ -245,33 +307,8 @@ export const translations = {
         tours: {
             badge: "Каталог",
             title: "Туры по Казахстану",
-            description:
-                "",
-            cards: {
-                0: {
-                    title: "Алматы – Кольсай и Каинды",
-                    days: "4 дня",
-                    level: "Лёгкий",
-                    price: 620,
-                    desc: "Сбалансированный маршрут: озёра, леса и Чарынский каньон.",
-                },
-                1: {
-                    title: "Чарынский каньон и поющие барханы",
-                    days: "3 дня",
-                    level: "Средний",
-                    price: 540,
-                    desc: "Каньоны, поющие барханы и степные пейзажи за один короткий тур.",
-                },
-                2: {
-                    title: "Мангистау и утёсы Бозжыра",
-                    days: "5 дней",
-                    level: "Интенсивный",
-                    price: 980,
-                    desc: "Белые утёсы, плато и сюрреалистичные формы в регионе Мангистау.",
-                },
-            },
-            previewButton: "Посмотреть программу",
-            levelLabel: "Уровень",
+            description: "",
+            previewButton: "Оставить заявку",
         },
 
         howItWorks: {
@@ -309,7 +346,6 @@ export const translations = {
             ],
         },
 
-
         login: {
             badge: "Вход",
             title: "Вход в TravelMate",
@@ -333,6 +369,12 @@ export const translations = {
             submit: "Зарегистрироваться",
             hasAccount: "Уже есть аккаунт?",
             toLogin: "Войти",
+        },
+
+        confirm: {
+            badge: "Регистрация",
+            title: "Подтвердите создание аккаунта",
+            description: "Откройте свою почту и подтвердите регистрацию.",
         },
 
         account: {
@@ -367,6 +409,76 @@ export const translations = {
             privacy: "Конфиденциальность",
             company: "TravelMate — туры по Казахстану",
         },
+
+
+        admin: {
+            common: {
+                checkingAccess: "Проверка доступа…",
+                accessDeniedTitle: "Доступ запрещён",
+                accessDeniedText:
+                    "Эта страница доступна только администраторам. Войдите под админ-аккаунтом или обратитесь к владельцу сайта.",
+            },
+            tours: {
+                pageTitle: "Туры",
+                loadError: "Не удалось загрузить туры",
+                listTitle: "Список туров",
+                newTourButton: "+ Новый тур",
+                loading: "Загрузка туров...",
+                empty: "Туров пока нет.",
+                daysShort: "дн",
+                deleteButton: "Удалить",
+                deleteConfirm: "Удалить этот тур?",
+                error: {
+                    uploadImage: "Ошибка загрузки картинки",
+                    saveTour: "Ошибка сохранения тура",
+                    deleteTour: "Не удалось удалить тур",
+                    generic: "Ошибка",
+                },
+                form: {
+                    editTitle: "Редактировать тур",
+                    newTitle: "Новый тур",
+                    clearForm: "Очистить форму",
+                    imageLabel: "Картинка (jpg, png)",
+                    currentImage: "Текущий файл:",
+                    priceLabel: "Цена, USD",
+                    daysLabel: "Дней",
+                    nameLabel: "Название",
+                    taglineLabel: "Подзаголовок (tagline)",
+                    shortDescLabel: "Короткое описание",
+                    moodLabel: "Теги настроения (через запятую)",
+                    moodHint: "Используй значения: relax, adventure, culture",
+                    budgetLabel: "Бюджет",
+                    submit: {
+                        saving: "Сохранение...",
+                        edit: "Сохранить изменения",
+                        create: "Создать тур",
+                    },
+                    cancelEdit: "Отменить редактирование",
+                    examples: {
+                        titleRu: "Шарынский каньон",
+                        titleEn: "Charyn Canyon",
+                        titleKz: "Шарын шатқалы",
+                        taglineRu: "Приключение • 2 дня из Алматы",
+                        taglineEn: "Adventure • 2 days from Almaty",
+                        taglineKz: "Шолу • Алматыдан 2 күн",
+                    },
+                },
+            },
+            orders: {
+                pageTitle: "Заявки на туры",
+                pageSubtitle:
+                    "Здесь отображаются все заявки, которые оставили пользователи.",
+                loadError: "Не удалось загрузить заявки",
+                loading: "Загрузка заявок…",
+                empty: "Пока нет ни одной заявки.",
+                table: {
+                    id: "ID",
+                    date: "Дата",
+                    tour: "Тур",
+                    user: "Пользователь (user_id)",
+                },
+            },
+        },
     },
 
     kz: {
@@ -376,6 +488,12 @@ export const translations = {
             howItWorks: "Қалай жұмыс істейді",
             login: "Кіру",
             register: "Тіркелу",
+            admin: {
+                main: "Әкім панелі",
+                tours: "Турлар",
+                orders: "Өтініштер"
+            },
+            logout: "Шығу"
         },
 
         home: {
@@ -431,33 +549,8 @@ export const translations = {
         tours: {
             badge: "Каталог",
             title: "Қазақстан бойынша турлар",
-            description:
-                "",
-            cards: {
-                0: {
-                    title: "Алматы – Көлсай және Қайыңды",
-                    days: "4 күн",
-                    level: "Жеңіл",
-                    price: 620,
-                    desc: "Көлдер, ормандар және Шарын шатқалы бар теңгерімді маршрут.",
-                },
-                1: {
-                    title: "Шарын шатқалы және ән салатын құмдар",
-                    days: "3 күн",
-                    level: "Орташа",
-                    price: 540,
-                    desc: "Каньондар, ән салатын құм төбелер және дала көріністері.",
-                },
-                2: {
-                    title: "Маңғыстау және Бозжыра жартастары",
-                    days: "5 күн",
-                    level: "Қанық",
-                    price: 980,
-                    desc: "Ақ жартастар, плато және ерекше ландшафттар.",
-                },
-            },
-            previewButton: "Бағдарламаны көру",
-            levelLabel: "Деңгейі",
+            description: "",
+            previewButton: "Өтініш қалдыру",
         },
 
         howItWorks: {
@@ -521,11 +614,16 @@ export const translations = {
             toLogin: "Кіру",
         },
 
+        confirm: {
+            badge: "Тіркелу",
+            title: "Аккаунт жасауды растаңыз",
+            description: "Поштаңызды ашып, тіркелуді растаңыз.",
+        },
+
         account: {
             badge: "Профиль",
             title: "Менің аккаунтым",
-            description:
-                "",
+            description: "",
             preferredStyleLabel: "Таңдаулы стиль",
             preferredStyleValue: "Демалыс + жеңіл трекинг",
             homeCityLabel: "Қала",
@@ -554,6 +652,73 @@ export const translations = {
             company: "TravelMate — Қазақстан турлары",
         },
 
-
+        admin: {
+            common: {
+                checkingAccess: "Қатынау тексерілуде…",
+                accessDeniedTitle: "Қатынау жабық",
+                accessDeniedText:
+                    "Бұл бетке тек әкімшілік аккаунтпен кірген қолданушылар ғана өте алады.",
+            },
+            tours: {
+                pageTitle: "Турлар",
+                loadError: "Турларды жүктеу мүмкін болмады",
+                listTitle: "Турлар тізімі",
+                newTourButton: "+ Жаңа тур",
+                loading: "Турлар жүктелуде...",
+                empty: "Әзірге бірде-бір тур жоқ.",
+                daysShort: "күн",
+                deleteButton: "Жою",
+                deleteConfirm: "Бұл турды жоямыз ба?",
+                error: {
+                    uploadImage: "Суретті жүктеу қатесі",
+                    saveTour: "Турды сақтау мүмкін болмады",
+                    deleteTour: "Турды жою мүмкін болмады",
+                    generic: "Қате",
+                },
+                form: {
+                    editTitle: "Турды өңдеу",
+                    newTitle: "Жаңа тур",
+                    clearForm: "Форманы тазарту",
+                    imageLabel: "Сурет (jpg, png)",
+                    currentImage: "Ағымдағы файл:",
+                    priceLabel: "Бағасы, USD",
+                    daysLabel: "Күн саны",
+                    nameLabel: "Атауы",
+                    taglineLabel: "Теглайн",
+                    shortDescLabel: "Қысқаша сипаттама",
+                    moodLabel: "Көңіл-күй тегтері (үтір арқылы)",
+                    moodHint: "Қолдан: relax, adventure, culture",
+                    budgetLabel: "Бюджет",
+                    submit: {
+                        saving: "Сақталуда...",
+                        edit: "Өзгерістерді сақтау",
+                        create: "Тур жасау",
+                    },
+                    cancelEdit: "Өңдеуді болдырмау",
+                    examples: {
+                        titleRu: "Шарын шатқалы (RU)",
+                        titleEn: "Charyn Canyon",
+                        titleKz: "Шарын шатқалы",
+                        taglineRu: "Шеру • Алматыдан 2 күн (RU)",
+                        taglineEn: "Adventure • 2 days from Almaty",
+                        taglineKz: "Сапар • Алматыдан 2 күн",
+                    },
+                },
+            },
+            orders: {
+                pageTitle: "Турға өтініштер",
+                pageSubtitle:
+                    "Мұнда қолданушылар жіберген барлық өтініштер көрсетіледі.",
+                loadError: "Өтініштерді жүктеу мүмкін болмады",
+                loading: "Өтініштер жүктелуде…",
+                empty: "Әзірге бірде-бір өтініш жоқ.",
+                table: {
+                    id: "ID",
+                    date: "Күні",
+                    tour: "Тур",
+                    user: "Қолданушы (user_id)",
+                },
+            },
+        },
     },
 };

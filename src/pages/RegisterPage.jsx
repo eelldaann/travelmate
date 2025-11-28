@@ -1,8 +1,36 @@
-import { Link } from "react-router";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { useLang } from "../contexts/LanguageContext.jsx";
+import { useAuth } from "../contexts/AuthContext.jsx";
 
 export default function RegisterPage() {
     const { t } = useLang();
+    const { signUp } = useAuth();
+
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [info, setInfo] = useState("");
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setError("");
+        setInfo("");
+        setLoading(true);
+        try {
+            await signUp({ email, password, firstName, lastName });
+            setInfo("Check your email to confirm registration.");
+            setError(err.message || "Failed to sign up");
+        } catch (err) {
+            setError(err.message || "Failed to sign up");
+        } finally {
+            setLoading(false);
+        }
+    }
 
     return (
         <div className="mx-auto flex min-h-[70vh] max-w-md items-center px-4 py-10">
@@ -14,60 +42,83 @@ export default function RegisterPage() {
                     <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
                         {t("register.title")}
                     </h1>
-                    <p className="text-xs text-slate-500">
-                        {t("register.description")}
-                    </p>
+                    {t("register.description") && (
+                        <p className="text-sm text-slate-500">
+                            {t("register.description")}
+                        </p>
+                    )}
                 </header>
 
-                <form className="space-y-4">
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-1.5">
-                            <label className="block text-xs font-medium text-slate-700">
-                                {t("register.firstName")}
-                            </label>
-                            <input
-                                type="text"
-                                className="w-full rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-sky-500"
-                            />
-                        </div>
-                        <div className="space-y-1.5">
-                            <label className="block text-xs font-medium text-slate-700">
-                                {t("register.lastName")}
-                            </label>
-                            <input
-                                type="text"
-                                className="w-full rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-sky-500"
-                            />
-                        </div>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-slate-700">
+                            {t("register.firstName")}
+                        </label>
+                        <input
+                            type="text"
+                            required
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            className="w-full rounded-2xl border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                        />
                     </div>
 
                     <div className="space-y-1.5">
-                        <label className="block text-xs font-medium text-slate-700">
+                        <label className="text-xs font-medium text-slate-700">
+                            {t("register.lastName")}
+                        </label>
+                        <input
+                            type="text"
+                            required
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            className="w-full rounded-2xl border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                        />
+                    </div>
+
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-slate-700">
                             {t("register.emailLabel")}
                         </label>
                         <input
                             type="email"
-                            className="w-full rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-sky-500"
-                            placeholder="you@example.com"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full rounded-2xl border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
                         />
                     </div>
 
                     <div className="space-y-1.5">
-                        <label className="block text-xs font-medium text-slate-700">
+                        <label className="text-xs font-medium text-slate-700">
                             {t("register.passwordLabel")}
                         </label>
                         <input
                             type="password"
-                            className="w-full rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-sky-500"
-                            placeholder="••••••••"
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full rounded-2xl border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
                         />
                     </div>
 
+                    {error && (
+                        <p className="text-xs text-rose-600">
+                            {error}
+                        </p>
+                    )}
+                    {info && (
+                        <p className="text-xs text-emerald-600">
+                            {info}
+                        </p>
+                    )}
+
                     <button
                         type="submit"
-                        className="mt-2 w-full rounded-full bg-sky-500 py-2.5 text-sm font-medium text-white hover:bg-sky-400 transition"
+                        disabled={loading}
+                        className="flex w-full items-center justify-center rounded-2xl bg-sky-600 px-3 py-2 text-sm font-semibold text-white hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                        {t("register.submit")}
+                        {loading ? "..." : t("register.submit")}
                     </button>
                 </form>
 

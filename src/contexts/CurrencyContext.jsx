@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 
 
 const RATES = {
@@ -10,7 +10,18 @@ const RATES = {
 const CurrencyContext = createContext();
 
 export function CurrencyProvider({ children }) {
-    const [currency, setCurrency] = useState("USD");
+    const [currency, setCurrency] = useState(() => {
+        if (typeof window !== "undefined") {
+            return localStorage.getItem("app_currency") || "USD";
+        }
+        return "USD";
+    });
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("app_currency", currency);
+        }
+    }, [currency]);
 
     const formatPrice = (usdAmount) => {
         const rate = RATES[currency] ?? 1;
